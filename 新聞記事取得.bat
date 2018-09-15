@@ -5,6 +5,6 @@ python fetch_JapanTimes.py
 python fetch_Telecom.py
 python notify_finish.py
 
-C:\WINDOWS\System32\shutdown.exe -s -t 300
+C:\WINDOWS\System32\shutdown.exe -r -t 60
 
 @pause
