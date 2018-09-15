@@ -19,7 +19,7 @@ from pil_for_kindle import image_process
 with open('secret.json') as sf:
     data = json.load(sf)
 
-root = 'K:\\新聞\\AsiaNikkei\\'
+root = 'C:\\Users\\user\\OneDrive\\Newspapers\\'
 
 # 設定項目1:見出しページをリストに格納
 lstSectionURL = ['/Editor-s-Picks/', '/Business/', '/Economy/', '/Politics/']

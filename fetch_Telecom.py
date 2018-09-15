@@ -34,8 +34,7 @@ ppr_tpl = ('NKM', 'NSS', 'NRS', 'NKL')
 ppr_bfr = 0
 
 # 設定項目4:ファイルの保存フォルダを指定
-# root = 'C:\\Users\\OWNER\\Dropbox\\日経新聞\\'
-root = 'K:\\新聞\\日経新聞\\'
+root = 'C:\\Users\\user\\OneDrive\\Newspapers\\'
 
 # 設定項目5:GmailのID
 gmail_id = data['gmail_id']
@@ -59,8 +58,6 @@ form['loginTuskKuzNo'].value = koza_id
 form['gnziLoginPswd'].value = koza_pw
 br.submit_form(form)
 print(br.find('title').text)
-# prompt=br.find('div',id='CmnCauSysLgi01_block').encode('shift-jis').decode('shift-jis','replace')
-# print(prompt)
 
 # 日経テレコンのページへ移動　いくつか遷移する。
 br.open('https://trade.03trade.com/web/cmnCauSysLgiSelectAction.do')
@@ -86,12 +83,10 @@ for ppr_elm in ppr_tpl:
 
     # 新聞記事のページへ
     br.open(ppr_url)
-    # print(br.find('h1',class_='hdgLv1').text)
 
     # 一番最初の記事から、日付を取得（yyyy/㎜/dd形式）
     info = br.find('li', class_='AttInfoBody').text.replace(u'\xa0', u' ').split(u' ')
     dt = info[0]
-    # ppr = info[1].replace(u'　',u' ')
 
     # パンくずリストから新聞名を取得
     ppr = br.find('p', class_='topicPath').find_all('a')[1].text
@@ -113,8 +108,6 @@ for ppr_elm in ppr_tpl:
             for newsNav in newsNavs:
                 try:
                     newsNav_text = newsNav.find('label').text
-                    # newsNav_text=newsNav.find('input',class_="js-checkbox-group js-checkbox-toggle-item").text
-                    # .encode('shift-jis').decode('shift-jis','replace')
                     Nav.append(newsNav_text)
                     print(newsNav_text)
                 except:
@@ -133,7 +126,6 @@ for ppr_elm in ppr_tpl:
                 for newsIdx in newsIdxs:
                     try:
                         newsTtl = newsIdx.find('p').find('a').text
-                        # .encode('shift-jis').decode('shift-jis','replace')
                         Ttl.append(newsTtl)
                         newsSrc = newsIdx.find('li', class_='AttInfoBody').text.split(u'\xa0')[1].replace('　', ' ')
                         Src.append(newsSrc)
