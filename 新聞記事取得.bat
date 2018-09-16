@@ -1,4 +1,4 @@
-cd C:\Users\OWNER\Dropbox\news_paper_code
+cd C:\Users\user\Dropbox\news_paper_code
 
 python fetch_AsiaNikkei.py
 python fetch_JapanTimes.py
