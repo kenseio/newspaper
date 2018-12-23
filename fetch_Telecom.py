@@ -34,7 +34,7 @@ ppr_tpl = ('NKM', 'NSS', 'NRS', 'NKL')
 ppr_bfr = 0
 
 # 設定項目4:ファイルの保存フォルダを指定
-root = 'C:\\Users\\OWNER\\OneDrive\\Newspapers\\'
+root = 'C:\\Users\\user\\OneDrive\\Newspapers\\日経新聞\\'
 
 # 設定項目5:GmailのID
 gmail_id = data['gmail_id']
